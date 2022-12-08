@@ -3,10 +3,7 @@
 /**
  * main - use puts to print a string
  */
-void main(void)
+int main(void)
 {
-	char s[] = "\"Programming is like building a multilingual puzzle";
-
-	puts("%s", s);
-	return (0);
+	puts("\"Programming is like building a multilingual puzzle");
 }
