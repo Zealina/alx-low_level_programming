@@ -2,6 +2,8 @@
 
 /**
  * main - use puts to print a string
+ *
+ * Return: Print the string and end code
  */
 int main(void)
 {
