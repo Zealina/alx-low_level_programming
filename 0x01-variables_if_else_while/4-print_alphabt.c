@@ -13,11 +13,9 @@ int main(void)
 	{
 		if (c1 == 'e')
 		{
-			c1++;
 		}
 		else if (c1 == 'q')
 		{
-			c1++;
 		}
 		else
 		{
