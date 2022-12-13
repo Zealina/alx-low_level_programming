@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * _islower - the entry point
+ * _isalpha - the entry point
  * Description: Function to check for the case of character
  * @c: value of the input in the function
  * Return: int c
