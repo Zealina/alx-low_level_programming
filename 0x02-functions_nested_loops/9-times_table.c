@@ -22,7 +22,7 @@ void times_table(void)
 				_putchar(' ');
 				if (n >= 10 && n < 100)
 				{
-					_putchar('0' + (n /10));
+					_putchar('0' + (n / 10));
 					_putchar('0' + (n % 10));
 				}
 				else if (n < 10)
