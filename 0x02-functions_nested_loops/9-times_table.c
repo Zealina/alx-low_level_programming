@@ -1,43 +1,42 @@
 #include "main.h"
 
 /**
- * times_table - the entry point
- * Description: Print out the nine times table
- * Return: Always zero, End of program
+ * times_table - Print the multiplication table of 9
+ * Description: Stated above
+ * Return: Always zero
  */
 void times_table(void)
 {
-	int a;
-	int b;
-	int n;
+	int a, b, n;
 
-	for (a = 0; a < 10; a++)
+	n = 0;
+
+	for (a = 0; a <= 9; a++)
 	{
-		for (b = 0; b < 10; b++)
+		for (b = 0; b <= 9; b++)
 		{
 			n = a * b;
-			if (n <= 9)
+			if (b > 0)
 			{
-				_putchar('0' + n);
-				if (b != 9)
+				_putchar(',');
+				_putchar(' ');
+				if (n >= 10 && n < 100)
 				{
-					_putchar(',');
+					_putchar('0' + (n /10));
+					_putchar('0' + (n % 10));
+				}
+				else if (n < 10)
+				{
 					_putchar(' ');
-					_putchar(' ');
+					_putchar('0' + n);
 				}
 			}
 			else
 			{
-				_putchar((n / 10) + 48);
-				_putchar('0' + (n % 10));
-				if (b != 9)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
+				_putchar(n + '0');
 			}
 
 		}
-		_putchar('\n');
+	_putchar('\n');
 	}
 }
