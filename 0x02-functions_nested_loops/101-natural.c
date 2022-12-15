@@ -1,9 +1,26 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
+ * print_natural_numbers -  Function to print natural numbers
+ * @n: The argument
+ */
+void print_natural_numbers(int n)
+{
+	int a, b, c = 0;
+
+	for (a = 0; a < n; a++)
+	{
+		b = (a % 3) || (a % 5);
+		if (b == 0)
+		{
+			c += a;
+		}
+	}
+	printf("%d\n", c);
+}
+/**
  * main - the entry point
- * Return: Always zero
+ * Return: always zero
  */
 int main(void)
 {
