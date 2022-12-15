@@ -19,9 +19,11 @@ void fibonacci(int n)
 		if (a == 0)
 		{
 			printf("%ld", b);
+			printf(", %ld", c);
 		}
 		else
 		{
+			printf(", %ld", b);
 			printf(", %ld", c);
 		}
 	}
