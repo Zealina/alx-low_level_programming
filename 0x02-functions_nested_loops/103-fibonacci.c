@@ -1,36 +1,56 @@
 #include <stdio.h>
 
 /**
- * fibonacci_add - the entry point
- * Description: Print sum of numbers of fibonacci
+ * fibonacci - Prints the first 98 Fibonacci numbers, starting with
  */
-void fibonacci_add(void)
+void fibonacci(void)
 {
-	unsigned long int b = 0, c = 1, a;
-	float sum;
+	int count;
+	unsigned long num1 = 0, num2 = 1, sum;
+	unsigned long num1_part1, num1_part2, num2_part1, num2_part2;
+	unsigned long part1, part2;
 
-	while (1)
+	for (count = 0; count < 92; count++)
 	{
-		a = b + c;
-		if (a > 4000000)
-		{
-			break;
-		}
-		if ((a % 2) == 0)
-		{
-			sum += a;
-		}
-		b = c;
-		c = a;
+		sum = num1 + num2;
+		printf("%lu, ", sum);
+
+		num1 = num2;
+		num2 = sum;
 	}
-	printf("%.0f\n", sum);
+
+	num1_part1 = num1 / 10000000000;
+	num2_part1 = num2 / 10000000000;
+	num1_part2 = num1 % 10000000000;
+	num2_part2 = num2 % 10000000000;
+
+	for (count = 93; count < 99; count++)
+	{
+		part1 = num1_part1 + num2_part1;
+		part2 = num1_part2 + num2_part2;
+		if (num1_part2 + num2_part2 > 9999999999)
+		{
+			part1 += 1;
+			part2 %= 10000000000;
+		}
+
+		printf("%lu%lu", part1, part2);
+		if (count != 98)
+			printf(", ");
+
+		num1_part1 = num2_part1;
+		num1_part2 = num2_part2;
+		num2_part1 = part1;
+		num2_part2 = part2;
+	}
+	printf("\n");
 }
 /**
  * main - the entry point
- * Return: End of program
+ * Return: always zero
  */
 int main(void)
 {
-	fibonacci_add();
+	fibonacci();
 	return (0);
 }
