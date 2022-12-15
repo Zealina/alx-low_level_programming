@@ -1,4 +1,4 @@
-void print_times_table(int n);
+void print_natural_numbers(int n);
 int _putchar(char c);
 
 int main(void);
