@@ -6,23 +6,16 @@
  */
 void print_natural_numbers(int n)
 {
-	int a, b, c = 0;
-	int d, e = 0;
+	int a, c = 0;
 
 	for (a = 0; a < n; a++)
 	{
-		b = (a % 3);
-		d = (a % 5);
-		if (b == 0)
+		if ((a % 3) == 0 || (a % 5) == 0)
 		{
 			c += a;
 		}
-		if (d == 0)
-		{
-			e += a;
-		}
 	}
-	printf("%d\n", (c + e));
+	printf("%d\n", c);
 }
 /**
  * main - the entry point
