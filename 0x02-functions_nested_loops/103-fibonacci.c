@@ -2,28 +2,28 @@
 
 /**
  * fibonacci_add - the entry point
- * Description: Print first 50 numbers of fibonacci
+ * Description: Print sum of numbers of fibonacci
  */
 void fibonacci_add(void)
 {
-	long int sum;
-	long int b = 0;
-	long int c = 1;
+	unsigned long int b = 0, c = 1, a;
+	float sum;
 
-	while (c < 4000000)
+	while (1)
 	{
-		b += c;
-		c += b;
-		if ((b % 2) == 0)
+		a = b + c;
+		if (a > 4000000)
 		{
-			sum += b;
+			break;
 		}
-		if ((c % 2) == 0)
+		if ((a % 2) == 0)
 		{
-			sum += c;
+			sum += a;
 		}
+		b = c;
+		c = a;
 	}
-	printf("%ld\n", sum);
+	printf("%.0f\n", sum);
 }
 /**
  * main - the entry point
