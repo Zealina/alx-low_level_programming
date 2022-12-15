@@ -8,18 +8,21 @@
 void fibonacci(int n)
 {
 	int a;
-	int b = 0;
-	int c = 1;
+	long int b = 0;
+	long int c = 1;
 
-	for (a = 0; a <= n; a++)
+	n /= 2;
+	for (a = 0; a < n; a++)
 	{
 		b += c;
 		c += b;
-		printf("%d, ", b);
-		printf("%d", c);
-		if (a != 50)
+		if (a == 0)
 		{
-			printf(", ");
+			printf("%ld", b);
+		}
+		else
+		{
+			printf(", %ld", c);
 		}
 	}
 	printf("\n");
