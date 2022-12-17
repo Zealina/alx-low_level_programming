@@ -1,44 +1,36 @@
 #include "main.h"
 
 /**
- * print_number - Function to print integer
- * @n: The argument
+ * print_number - print an integer
+ * @n: number to be printed
  */
+
 void print_number(int n)
 {
-	while (n < 0)
+	unsigned int a, b, d = n;
+	double c = 1;
+
+	if (n == 0)
+		_putchar('0');
+	else
 	{
-		n = n * (-1);
-		_putchar('-');
-	}
-	if ((n >= 0 && n < 10) || (n > -10 && n < 0))
-	{
-		_putchar('0' + n);
-	}
-	else if ((n >= 10 && n < 100) || (n > -100 && n <= -10))
-	{
-		_putchar('0' + (n / 10));
-		_putchar('0' + (n % 10));
-	}
-	else if ((n >= 100 && n < 1000) || (n > -1000 && n <= -100))
-	{
-		_putchar('0' + (n / 100));
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
-	}
-	else if ((n >= 1000 && n < 10000) || (n > -10000 && n <= -1000))
-	{
-		_putchar('0' + (n / 1000));
-		_putchar('0' + ((n / 100) % 10));
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
-	}
-	else if ((n >= 10000 && n < 100000) || (n > -100000 && n <= -10000))
-	{
-		_putchar('0' + (n / 10000));
-		_putchar('0' + ((n / 1000) % 10));
-		_putchar('0' + ((n / 100) % 10));
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
+		if (n < 0)
+		{
+			d = n * -1;
+			_putchar('-');
+		}
+
+		while (c <= d)
+			c *= 10;
+		a = c / 10;
+
+		while (a >= 1)
+		{
+			b = d / a;
+			_putchar(b + '0');
+			d = (d - (a * b));
+			a /= 10;
+
+		}
 	}
 }
