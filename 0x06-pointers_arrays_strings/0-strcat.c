@@ -17,7 +17,7 @@ char *_strcat(char *dest, char *src)
 	}
 	for (x = 0; src[x]; x++)
 	{
-		dest[length_a - 2] = src[x];
+		dest[length_a - 1] = src[x];
 		length_a++;
 	}
 	pointer = dest;
