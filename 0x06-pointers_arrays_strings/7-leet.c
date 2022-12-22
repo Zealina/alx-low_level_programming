@@ -1,25 +1,28 @@
 #include "main.h"
 
 /**
- * leet - function to replace some alphabets with numbers
- * @str: The string
- * Return: Pointer to the string
+ * leet - Encodes a string into 1337.
+ *
+ * @str: String argument passed.
+ *
+ * Return: String pointer.
  */
 char *leet(char *str)
 {
-	int x, y;
-	char nice[5] = {'4', '3', '0', '7', '1'};
-	char noce[10] = {'a', 'e', 'o', 't', 'l', 'A', 'E', 'O', 'T', 'L'};
+	int indx1 = 0, indx2;
+	char l[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
 
-	for (x = 0; str[x]; x++)
+	while (str[indx1])
 	{
-		for (y = 0; y <= 4; y++)
+		for (indx2 = 0; indx2 <= 7; indx2++)
 		{
-			if (str[x] == noce[y] || str[x] == noce[y * 2])
-			{
-				str[x] = nice[y];
-			}
+			if (str[indx1] == l[indx2] ||
+			    str[indx1] - 32 == l[indx2])
+				str[indx1] = indx2 + '0';
 		}
+
+		indx1++;
 	}
+
 	return (str);
 }
