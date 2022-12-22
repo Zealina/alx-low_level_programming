@@ -1,25 +1,31 @@
 #include "main.h"
 
 /**
- * cap_string - Function to capitalize first letters of a string
- * @ptr: Pointer to the string
- * Return: The Pointer to the string
+ * cap_string - function to capitalize the worst
+ * @s: The Pointer to argument
+ * Return: The pointer
  */
-char *cap_string(char *ptr)
+char *cap_string(char *s)
 {
-	int x, y;
-	char checker[14] = {44, 46, 123, 125, 59,
-		40, 41, 34, 33, 63, ' ', '\t', '\n'};
+	int i = 0, j;
+	char a[] = " \t\n,;.!?\"(){}";
 
-	for (x = 0; ptr[x] != '\0'; x++)
+	while (*(s + i))
 	{
-		for (y = 0; checker[y] != '\0'; y++)
+		if (*(s + i) >= 'a' && *(s + i) <= 'z')
 		{
-			if (ptr[x] == checker[y] && ptr[x + 1] >= 97 && ptr[x + 1] <= 122)
+			if (i == 0)
+				*(s + i) -= 'a' - 'A';
+			else
 			{
-				ptr[x + 1] -= 32;
+				for (j = 0; j <= 12; j++)
+				{
+					if (a[j] == *(s + i - 1))
+						*(s + i) -= 'a' - 'A';
+				}
 			}
 		}
+		i++;
 	}
-	return (ptr);
+	return (s);
 }
