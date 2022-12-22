@@ -15,7 +15,7 @@ char *cap_string(char *ptr)
 	{
 		for (y = 0; checker[y]; y++)
 		{
-			if (ptr[x + 1] >= 97 && ptr[x + 1] <= 12)
+			if (ptr[x] == checker[y] && ptr[x + 1] >= 97 && ptr[x + 1] <= 122)
 			{
 				ptr[x + 1] -= 32;
 			}
