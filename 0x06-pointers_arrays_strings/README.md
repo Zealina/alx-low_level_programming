@@ -1,1 +1,1 @@
-More Exercise on pointers and arrays
+More exercises on pointers and arrays
