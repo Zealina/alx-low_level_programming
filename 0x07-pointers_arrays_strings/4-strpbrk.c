@@ -12,7 +12,7 @@ char *_strpbrk(char *s, char *accept)
 	unsigned int ind1, ind2, a = 1;
 	char *ptr;
 
-	for (ind1 = 0; s[ind1] && a != 0; ind1++)
+	for (ind1 = 0; s[ind1] >= '\0' && a != 0; ind1++)
 	{
 		for (ind2 = 0; accept[ind2]; ind2++)
 		{
