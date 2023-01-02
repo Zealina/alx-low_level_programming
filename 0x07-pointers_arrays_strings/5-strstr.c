@@ -20,7 +20,7 @@ char *_strstr(char *haystack, char *needle)
 		length++;
 		a += needle[index];
 	}
-	for (ind1 = 0, ind2 = 0; haystack[ind1] && help > 0; ind1++)
+	for (ind1 = 0, ind2 = 0; haystack[ind1] >= '\0' && help > 0; ind1++)
 	{
 		if (haystack[ind1] == needle[ind2])
 		{
