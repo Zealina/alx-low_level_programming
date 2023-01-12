@@ -1,1 +1,1 @@
-More Exercises on memory allocation using malloc
+## 0x0C. C - More malloc, free
