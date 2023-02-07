@@ -9,7 +9,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	ssize_t rdret, wrret;
-	char *buf; 
+	char *buf;
 	int fd;
 
 	if (!filename)
@@ -22,6 +22,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	rdret = read(fd, buf, letters);
 	wrret = write(STDOUT_FILENO, buf, rdret);
-	free (buff);
+	free(buff);
 	return (wrret);
 }
