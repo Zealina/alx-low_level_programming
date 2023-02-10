@@ -18,9 +18,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	for (length = 0; text_content[length]; length++)
 		;
-	if (!text_content)
-		close(fd);
-	else
+	if (text_content)
 	{
 		nwr = write(fd, text_content, length);
 		if (nwr == -1)
