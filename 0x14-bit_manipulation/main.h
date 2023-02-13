@@ -1,7 +1,9 @@
-#ifndef MATH_H
-#define MATH_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <string.h>
 unsigned int binary_to_uint(const char *b);
+void print_binary(unsigned long int n);
+int _putchar(char c);
 
-#endif /*MATH_H*/
+#endif /*MAIN_H*/
