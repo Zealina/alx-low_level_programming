@@ -13,7 +13,7 @@ size_t print_listint(const listint_t *h)
 {
 	size_t node = 0;
 	const listint_t *trav;
-	
+
 	trav = h;
 	while (trav != NULL)
 	{
