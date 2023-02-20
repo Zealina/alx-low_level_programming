@@ -1,24 +1,20 @@
 #include "lists.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 /**
- * free_listint2 - frees a singly linked list and sets the head
- *	to NULL
- * @head: Pointer to the list
- *
- * Return: void
+ * free_listint2 - frees a list and sets the heaed to Null
+ * @head:  pointer to the begining of the string
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *temp;
+	listint_t *current, *next;
 
-	while (*head != NULL)
+	if (head == NULL)
+		return;
+	current = *head;
+	while (current)
 	{
-		temp = *head;
-		*head = (*head)->next;
-		free(temp);
+		next = current->next;
+		free(current);
+		current = next;
 	}
 	*head = NULL;
 }
