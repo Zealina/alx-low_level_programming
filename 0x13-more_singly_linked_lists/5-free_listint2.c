@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 /**
  * free_listint2 - frees a list and sets the heaed to Null
  * @head:  pointer to the begining of the string
