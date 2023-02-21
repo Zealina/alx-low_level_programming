@@ -6,7 +6,7 @@
 /**
  * delete_nodeint_at_index - delete node at a index
  * @head: Pointer to the list
- * @idx: index to delete node at
+ * @index: index to delete node at
  *
  * Return: 1 if it succeeded, -1 if it failed
  */
