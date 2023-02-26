@@ -3,7 +3,7 @@
 
 /**
  * _atoi - function to convert a character to number
- * @*temp: Pointer to the string of numbers
+ * @num_string: Pointer to the string of numbers
  *
  * Return: The number converted from character
  */
