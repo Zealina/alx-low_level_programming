@@ -26,9 +26,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = item;
 	else
 	{
-		move = ht->array[index];
-		ht->array[index] = item;
-		item->next = move;
+		if ((ht->array[index])->key == key)
+			(ht->array[index])->value = strdup(value);
+		else
+		{
+			move = ht->array[index];
+			ht->array[index] = item;
+			item->next = move;
+		}
 	}
 	return (1);
 }
