@@ -10,6 +10,11 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	hash_node_t *ret;
 
+	if (ht == NULL || key == NULL || *key == '\0')
+		return (NULL);
+	if (ht->array == NULL)
+		return (NULL);
+
 	if (ht->array[key_index((unsigned char *)key, ht->size)])
 	{
 		ret = ht->array[key_index((unsigned char *)key, ht->size)];
