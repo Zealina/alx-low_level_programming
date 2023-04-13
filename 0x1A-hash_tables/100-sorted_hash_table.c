@@ -4,7 +4,7 @@
  * shash_table_create - Create a hash_table with sorted elements in the list
  *
  * @size: The size of the table to be created
- * Retrurn: The hash table if successful, NULL Otherwise
+ * Return: The hash table if successful, NULL Otherwise
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
