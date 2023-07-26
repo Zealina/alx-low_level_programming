@@ -10,8 +10,6 @@ all: m.h $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-$(OBJ): %.o: %.c
-
 clean:
 	$(RM) $(NAME) *~
 .PHONY: clean
