@@ -1,6 +1,19 @@
 #!/usr/bin/python3
+"""
+Island Perimeter: This Module contains function to calculate the
+perimeter of an island
+"""
+
 
 def island_perimeter(grid):
+    """
+    This Function Calculates the Perimetrr of an Island based on the
+    binary represrntation of Land and Water
+    Args:
+        grid (list): The List ov list containing the map of island
+
+    Return: The PERIMETER of the island
+    """
     if grid is None or type(grid) is not list:
         return
     row_length = len(grid[0])
@@ -14,7 +27,6 @@ def island_perimeter(grid):
                 return
             if elem < 0 or elem > 1:
                 return
-
     width = 0
     height = 0
     for row in grid:
@@ -32,6 +44,4 @@ def island_perimeter(grid):
                 height += 1
                 col_checker += 1
                 col_checker %= 2
-
-
     return width + height
