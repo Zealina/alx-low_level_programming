@@ -36,6 +36,8 @@ def island_perimeter(grid):
                 width += 1
                 row_checker += 1
                 row_checker %= 2
+        if row_checker == 1:
+            width += 1
 
     for col_num in range(0, len(grid[0])):
         col_checker = 0
@@ -44,4 +46,6 @@ def island_perimeter(grid):
                 height += 1
                 col_checker += 1
                 col_checker %= 2
+        if col_checker == 1:
+            height += 1
     return width + height
