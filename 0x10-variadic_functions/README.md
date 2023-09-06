@@ -1,1 +1,1 @@
-## 0x10. C - Variadic functions
+Introduction to Variadic Functions
