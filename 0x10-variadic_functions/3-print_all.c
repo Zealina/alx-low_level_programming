@@ -10,15 +10,15 @@ void print_all(const char *format, ...)
 {
 	va_list ap;
 	unsigned int i = 0;
-	char acter;
 	char *sep = "";
 	char *temp;
 
+	if (!format)
+		return;
 	va_start(ap, format);
 	while (format[i])
 	{
-		acter = format[i];
-		switch (acter)
+		switch (format[i])
 		{
 			case 'c':
 				printf("%s%c", sep, va_arg(ap, int));
