@@ -6,7 +6,7 @@
  *
  * Return: Nothing, Void Function
  */
-void print_all(const char *format, ...)
+void print_all(const char * const format, ...)
 {
 	va_list ap;
 	unsigned int i = 0;
