@@ -10,7 +10,9 @@ void print_all(const char *format, ...)
 {
 	va_list ap;
 	unsigned int i = 0;
-	char acter, *sep = "", *temp;
+	char acter;
+	char *sep = "";
+	char *temp;
 
 	va_start(ap, format);
 	while (format[i])
@@ -34,7 +36,8 @@ void print_all(const char *format, ...)
 				printf("%s%s", sep, temp);
 				break;
 			default:
-				break;
+				i++;
+				continue;
 		}
 		sep = ", ";
 		i++;
