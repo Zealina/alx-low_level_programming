@@ -16,29 +16,28 @@ int advanced_binary(int *array, size_t size, int value)
 /**
  * advanced_binary_search - Main function to do the work
  * @array: The array to be searched
- * @u_bound: The upper limit
- * @l_bound: The lower limit
+ * @high: The upper limit
+ * @low: The lower limit
  * @value: The value to saerch for
  *
  * Return: The first index of the value to be searched for
  */
-int advanced_binary_search (int *array, size_t u_bound, size_t l_bound, int value)
+int advanced_binary_search (int *array, size_t high, size_t low, int value)
 {
-	size_t mid = l_bound + (u_bound - l_bound) / 2;
+	size_t mid = low + (high - low) / 2;
 
+	if (low > high)
+		return (-1);
 	if (array[mid] == value)
 	{
 		if (mid == 0 || array[mid - 1] != value)
 			return (mid);
 		else
-			return (advanced_binary_search(array, mid - 1, l_bound, value));
+			return (advanced_binary_search(array, mid - 1, low, value));
 	}
 	else if (value < array[mid])
-			return (advanced_binary_search(array, mid - 1, l_bound, value));
+		return (advanced_binary_search(array, mid - 1, low, value));
 	else if (value > array[mid])
-		return (advanced_binary_search(array, u_bound, mid + 1, value));
-	else if (mid == u_bound)
-		return (-1);
-
+		return (advanced_binary_search(array, high, mid + 1, value));
 	return (-1);
 }
