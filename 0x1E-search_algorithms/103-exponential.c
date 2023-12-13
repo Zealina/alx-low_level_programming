@@ -16,9 +16,10 @@ int exponential_search(int *array, size_t size, int value)
 	while (u_bound < size && array[u_bound] < value)
 		u_bound *= 2;
 	l_bound = u_bound / 2;
-	if (u_bound > size)
+	if (u_bound >= size)
 		u_bound = size - 1;
-	for (i = l_bound; i <=  u_bound; i = (u_bound + l_bound) / 2)
+	i = (l_bound + u_bound) / 2;
+	for ( ; i < u_bound; i = (l_bound + u_bound) / 2)
 	{
 		if (array[i] == value)
 			return (i);
@@ -27,5 +28,7 @@ int exponential_search(int *array, size_t size, int value)
 		else if (value > array[i])
 			l_bound = i + 1;
 	}
+	if (array[i] == value)
+		return (i);
 	return (-1);
 }
