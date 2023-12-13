@@ -1,34 +1,52 @@
 #include "search_algos.h"
+
 /**
- * interpolation_search - Search for a value in an array
- * @array: The array to be searched
- * @size the size of the array
- * @value: The value to search for
+ * interpolation_search - searches for a value in an array of
+ * integers using the Interpolation search algorithm
  *
- * Return: The index of value if found, -1 otherwise
+ * @array: input array
+ * @size: size of the array
+ * @value: value to search in
+ * Return: index of the number
  */
 int interpolation_search(int *array, size_t size, int value)
 {
-	size_t lo = 0, hi = size - 1, pos;
+	size_t pos, low, high;
+	double f;
 
-	if (!array)
+	if (array == NULL)
 		return (-1);
-	while (hi != lo)
+
+	low = 0;
+	high = size - 1;
+
+	while (size)
 	{
-		pos = lo + ((hi - lo) * (value - array[lo]) / (array[hi] - array[lo]));
-		if (pos > hi)
+		f = (double)(high - low) / (array[high] - array[low]) * (value - array[low]);
+		pos = (size_t)(low + f);
+		printf("Value checked array[%d]", (int)pos);
+
+		if (pos >= size)
 		{
-			printf("Value checked array[%d] is out of range\n", pos);
-			return (-1);
+			printf(" is out of range\n");
+			break;
 		}
-		if (array[pos] == value)
-			return (pos);
-		else if (array[pos] < value)
-			lo = pos + 1;
 		else
-			hi = pos - 1;
+		{
+			printf(" = [%d]\n", array[pos]);
+		}
+
+		if (array[pos] == value)
+			return ((int)pos);
+
+		if (array[pos] < value)
+			low = pos + 1;
+		else
+			high = pos - 1;
+
+		if (low == high)
+			break;
 	}
-	if (value == array[lo])
-		return (lo);
+
 	return (-1);
 }
